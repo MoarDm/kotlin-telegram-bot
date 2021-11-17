@@ -4,6 +4,7 @@ import com.github.kotlintelegrambot.dispatcher.handlers.CallbackQueryHandler
 import com.github.kotlintelegrambot.dispatcher.handlers.ChannelHandler
 import com.github.kotlintelegrambot.dispatcher.handlers.CommandHandler
 import com.github.kotlintelegrambot.dispatcher.handlers.ContactHandler
+import com.github.kotlintelegrambot.dispatcher.handlers.CustomQueryHandler
 import com.github.kotlintelegrambot.dispatcher.handlers.DiceHandler
 import com.github.kotlintelegrambot.dispatcher.handlers.ErrorHandler
 import com.github.kotlintelegrambot.dispatcher.handlers.HandleAnimation
@@ -12,6 +13,7 @@ import com.github.kotlintelegrambot.dispatcher.handlers.HandleCallbackQuery
 import com.github.kotlintelegrambot.dispatcher.handlers.HandleChannelPost
 import com.github.kotlintelegrambot.dispatcher.handlers.HandleCommand
 import com.github.kotlintelegrambot.dispatcher.handlers.HandleContact
+import com.github.kotlintelegrambot.dispatcher.handlers.HandleCustomQuery
 import com.github.kotlintelegrambot.dispatcher.handlers.HandleDice
 import com.github.kotlintelegrambot.dispatcher.handlers.HandleDocument
 import com.github.kotlintelegrambot.dispatcher.handlers.HandleError
@@ -101,6 +103,10 @@ fun Dispatcher.telegramError(handleError: HandleError) {
 
 fun Dispatcher.preCheckoutQuery(body: HandlePreCheckoutQuery) {
     addHandler(PreCheckoutQueryHandler(body))
+}
+
+fun Dispatcher.customQuery(body: HandleCustomQuery) {
+    addHandler(CustomQueryHandler(body))
 }
 
 fun Dispatcher.channel(body: HandleChannelPost) {

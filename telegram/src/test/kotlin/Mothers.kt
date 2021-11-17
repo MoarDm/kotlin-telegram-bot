@@ -25,6 +25,9 @@ import com.github.kotlintelegrambot.entities.payments.OrderInfo
 import com.github.kotlintelegrambot.entities.payments.PreCheckoutQuery
 import com.github.kotlintelegrambot.entities.payments.ShippingQuery
 import com.github.kotlintelegrambot.entities.payments.SuccessfulPayment
+import com.github.kotlintelegrambot.entities.payments.provider.Credentials
+import com.github.kotlintelegrambot.entities.payments.provider.CustomQuery
+import com.github.kotlintelegrambot.entities.payments.provider.CustomerInfo
 import com.github.kotlintelegrambot.entities.polls.PollAnswer
 import com.github.kotlintelegrambot.entities.stickers.Sticker
 import java.math.BigInteger
@@ -41,6 +44,7 @@ fun anyUpdate(
     preCheckoutQuery: PreCheckoutQuery? = null,
     shippingQuery: ShippingQuery? = null,
     inlineQuery: InlineQuery? = null,
+    customQuery: CustomQuery? = null,
     pollAnswer: PollAnswer? = null
 ): Update = Update(
     updateId = updateId,
@@ -52,6 +56,7 @@ fun anyUpdate(
     preCheckoutQuery = preCheckoutQuery,
     shippingQuery = shippingQuery,
     inlineQuery = inlineQuery,
+    customQuery = customQuery,
     pollAnswer = pollAnswer
 )
 
@@ -469,4 +474,38 @@ fun anyPreCheckoutQuery(
     invoicePayload = invoicePayload,
     shippingOptionId = shippingOptionId,
     orderInfo = orderInfo
+)
+
+fun anyCustomQuery(
+    id: String = "anyId",
+    method: String = "payments.form",
+    botId: Int = 123,
+    botAccount: String = "botAccount",
+    botUsername: String = "botUsername",
+    botOwnerId: Int = 1234,
+    currency: String = "USD",
+    totalAmount: BigInteger = BigInteger.ONE,
+    saveCredentials: Boolean = false,
+    credentials: Credentials = Credentials(type = "card"),
+    customerInfo: CustomerInfo? = null,
+    chargeId: String? = null,
+    payload: String? = null,
+    callback: String? = null,
+    data: String? = null
+): CustomQuery = CustomQuery(
+    id = id,
+    currency = currency,
+    totalAmount = totalAmount,
+    method = method,
+    botId = botId,
+    botAccount = botAccount,
+    botUsername = botUsername,
+    botOwnerId = botOwnerId,
+    chargeId = chargeId,
+    saveCredentials = saveCredentials,
+    credentials = credentials,
+    customerInfo = customerInfo,
+    payload = payload,
+    callback = callback,
+    data = data
 )

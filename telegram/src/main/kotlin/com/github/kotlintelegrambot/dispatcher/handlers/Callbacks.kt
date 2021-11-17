@@ -41,6 +41,8 @@ typealias HandleChannelPost = ChannelHandlerEnvironment.() -> Unit
 
 typealias HandlePreCheckoutQuery = PreCheckoutQueryHandlerEnvironment.() -> Unit
 
+typealias HandleCustomQuery = CustomQueryHandlerEnvironment.() -> Unit
+
 typealias HandleAudio = MediaHandlerEnvironment<Audio>.() -> Unit
 typealias HandleDocument = MediaHandlerEnvironment<Document>.() -> Unit
 typealias HandleAnimation = MediaHandlerEnvironment<Animation>.() -> Unit
