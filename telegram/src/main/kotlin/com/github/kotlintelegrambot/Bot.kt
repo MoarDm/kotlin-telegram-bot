@@ -37,6 +37,7 @@ import com.github.kotlintelegrambot.webhook.WebhookConfig
 import com.github.kotlintelegrambot.webhook.WebhookConfigBuilder
 import java.net.Proxy
 import java.util.concurrent.BlockingQueue
+import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 import java.util.concurrent.LinkedBlockingQueue
 import java.io.File as SystemFile
@@ -78,9 +79,10 @@ class Bot private constructor(
         var logLevel: LogLevel = LogLevel.None
         var proxy: Proxy = Proxy.NO_PROXY
         internal var dispatcherConfiguration: Dispatcher.() -> Unit = { }
+        var customExecutor: Executor = Executors.newCachedThreadPool()
 
         fun build(): Bot {
-            val updatesExecutor = Executors.newCachedThreadPool()
+            val updatesExecutor = customExecutor
             val updatesQueue = LinkedBlockingQueue<DispatchableObject>()
             val looper = ExecutorLooper(updatesExecutor)
             val apiClient = ApiClient(token, apiUrl, timeout, logLevel, proxy, gson)
@@ -138,12 +140,12 @@ class Bot private constructor(
             mapResponse = { true },
             mapError = { false }
         )
-
-        if (webhookSet or forceStartCheckingUpdates) {
+        val startCheckingUpdates = webhookSet or forceStartCheckingUpdates
+        if (startCheckingUpdates) {
             dispatcher.startCheckingUpdates()
         }
 
-        return webhookSet
+        return startCheckingUpdates
     }
 
     /**
