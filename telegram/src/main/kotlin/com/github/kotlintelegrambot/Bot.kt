@@ -140,12 +140,12 @@ class Bot private constructor(
             mapResponse = { true },
             mapError = { false }
         )
-        val startCheckingUpdates = webhookSet or forceStartCheckingUpdates
-        if (startCheckingUpdates) {
+
+        if (webhookSet or forceStartCheckingUpdates) {
             dispatcher.startCheckingUpdates()
         }
 
-        return startCheckingUpdates
+        return webhookSet
     }
 
     /**
