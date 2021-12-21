@@ -124,7 +124,7 @@ class Bot private constructor(
      * updates if it was successfully set.
      * @return true if the webhook was successfully set or false otherwise
      */
-    fun startWebhook(forceStartCheckingUpdates: Boolean = false): Boolean {
+    fun startWebhook(forceStartCheckingUpdates: Boolean = false, throwErrorIfNeeded: Boolean = false): Boolean {
         if (webhookConfig == null) {
             error("To start a webhook you need to configure it on bot set up. Check the `webhook` builder function")
         }
@@ -143,6 +143,15 @@ class Bot private constructor(
 
         if (webhookSet or forceStartCheckingUpdates) {
             dispatcher.startCheckingUpdates()
+        }
+
+        if (!webhookSet && throwErrorIfNeeded) {
+            setWebhookResult.first?.errorBody()?.let { rawResponse ->
+                val content = rawResponse.string()
+                if (content.isNotEmpty()) {
+                    error("Error occurred with rawResponse=[$content]")
+                }
+            }
         }
 
         return webhookSet

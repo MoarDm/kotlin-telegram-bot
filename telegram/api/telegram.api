@@ -145,8 +145,8 @@ public final class com/github/kotlintelegrambot/Bot {
 	public final fun setWebhook (Ljava/lang/String;Lcom/github/kotlintelegrambot/entities/TelegramFile;Ljava/lang/String;Ljava/lang/Integer;Ljava/util/List;)Lkotlin/Pair;
 	public static synthetic fun setWebhook$default (Lcom/github/kotlintelegrambot/Bot;Ljava/lang/String;Lcom/github/kotlintelegrambot/entities/TelegramFile;Ljava/lang/String;Ljava/lang/Integer;Ljava/util/List;ILjava/lang/Object;)Lkotlin/Pair;
 	public final fun startPolling ()V
-	public final fun startWebhook (Z)Z
-	public static synthetic fun startWebhook$default (Lcom/github/kotlintelegrambot/Bot;ZILjava/lang/Object;)Z
+	public final fun startWebhook (ZZ)Z
+	public static synthetic fun startWebhook$default (Lcom/github/kotlintelegrambot/Bot;ZZILjava/lang/Object;)Z
 	public final fun stopMessageLiveLocation (Lcom/github/kotlintelegrambot/entities/ChatId;Ljava/lang/Long;Ljava/lang/String;Lcom/github/kotlintelegrambot/entities/ReplyMarkup;)Lkotlin/Pair;
 	public static synthetic fun stopMessageLiveLocation$default (Lcom/github/kotlintelegrambot/Bot;Lcom/github/kotlintelegrambot/entities/ChatId;Ljava/lang/Long;Ljava/lang/String;Lcom/github/kotlintelegrambot/entities/ReplyMarkup;ILjava/lang/Object;)Lkotlin/Pair;
 	public final fun stopPoll (Lcom/github/kotlintelegrambot/entities/ChatId;JLcom/github/kotlintelegrambot/entities/InlineKeyboardMarkup;)Lcom/github/kotlintelegrambot/types/TelegramBotResult;
@@ -167,12 +167,14 @@ public final class com/github/kotlintelegrambot/Bot$Builder {
 	public final fun build ()Lcom/github/kotlintelegrambot/Bot;
 	public final fun build (Lkotlin/jvm/functions/Function1;)Lcom/github/kotlintelegrambot/Bot;
 	public final fun getApiUrl ()Ljava/lang/String;
+	public final fun getCustomExecutor ()Ljava/util/concurrent/Executor;
 	public final fun getLogLevel ()Lcom/github/kotlintelegrambot/logging/LogLevel;
 	public final fun getProxy ()Ljava/net/Proxy;
 	public final fun getTimeout ()I
 	public final fun getToken ()Ljava/lang/String;
 	public final fun getWebhookConfig ()Lcom/github/kotlintelegrambot/webhook/WebhookConfig;
 	public final fun setApiUrl (Ljava/lang/String;)V
+	public final fun setCustomExecutor (Ljava/util/concurrent/Executor;)V
 	public final fun setLogLevel (Lcom/github/kotlintelegrambot/logging/LogLevel;)V
 	public final fun setProxy (Ljava/net/Proxy;)V
 	public final fun setTimeout (I)V
