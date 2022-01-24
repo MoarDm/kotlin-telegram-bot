@@ -2725,33 +2725,35 @@ public final class com/github/kotlintelegrambot/entities/payments/provider/Crede
 }
 
 public final class com/github/kotlintelegrambot/entities/payments/provider/CustomQuery {
-	public fun <init> (Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/math/BigInteger;Lcom/github/kotlintelegrambot/entities/payments/provider/CustomerInfo;Ljava/lang/Boolean;Ljava/lang/String;Lcom/github/kotlintelegrambot/entities/payments/provider/Credentials;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;JJLjava/lang/String;Ljava/math/BigInteger;Lcom/github/kotlintelegrambot/entities/payments/provider/CustomerInfo;Ljava/lang/Boolean;Ljava/lang/String;Lcom/github/kotlintelegrambot/entities/payments/provider/Credentials;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 	public final fun component1 ()Ljava/lang/String;
-	public final fun component10 ()Ljava/lang/Boolean;
-	public final fun component11 ()Ljava/lang/String;
-	public final fun component12 ()Lcom/github/kotlintelegrambot/entities/payments/provider/Credentials;
-	public final fun component13 ()Ljava/lang/String;
+	public final fun component10 ()Lcom/github/kotlintelegrambot/entities/payments/provider/CustomerInfo;
+	public final fun component11 ()Ljava/lang/Boolean;
+	public final fun component12 ()Ljava/lang/String;
+	public final fun component13 ()Lcom/github/kotlintelegrambot/entities/payments/provider/Credentials;
 	public final fun component14 ()Ljava/lang/String;
 	public final fun component15 ()Ljava/lang/String;
+	public final fun component16 ()Ljava/lang/String;
 	public final fun component2 ()Ljava/lang/String;
-	public final fun component3 ()I
+	public final fun component3 ()J
 	public final fun component4 ()Ljava/lang/String;
 	public final fun component5 ()Ljava/lang/String;
-	public final fun component6 ()I
-	public final fun component7 ()Ljava/lang/String;
-	public final fun component8 ()Ljava/math/BigInteger;
-	public final fun component9 ()Lcom/github/kotlintelegrambot/entities/payments/provider/CustomerInfo;
-	public final fun copy (Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/math/BigInteger;Lcom/github/kotlintelegrambot/entities/payments/provider/CustomerInfo;Ljava/lang/Boolean;Ljava/lang/String;Lcom/github/kotlintelegrambot/entities/payments/provider/Credentials;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/github/kotlintelegrambot/entities/payments/provider/CustomQuery;
-	public static synthetic fun copy$default (Lcom/github/kotlintelegrambot/entities/payments/provider/CustomQuery;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/math/BigInteger;Lcom/github/kotlintelegrambot/entities/payments/provider/CustomerInfo;Ljava/lang/Boolean;Ljava/lang/String;Lcom/github/kotlintelegrambot/entities/payments/provider/Credentials;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/github/kotlintelegrambot/entities/payments/provider/CustomQuery;
+	public final fun component6 ()J
+	public final fun component7 ()J
+	public final fun component8 ()Ljava/lang/String;
+	public final fun component9 ()Ljava/math/BigInteger;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;JJLjava/lang/String;Ljava/math/BigInteger;Lcom/github/kotlintelegrambot/entities/payments/provider/CustomerInfo;Ljava/lang/Boolean;Ljava/lang/String;Lcom/github/kotlintelegrambot/entities/payments/provider/Credentials;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/github/kotlintelegrambot/entities/payments/provider/CustomQuery;
+	public static synthetic fun copy$default (Lcom/github/kotlintelegrambot/entities/payments/provider/CustomQuery;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;JJLjava/lang/String;Ljava/math/BigInteger;Lcom/github/kotlintelegrambot/entities/payments/provider/CustomerInfo;Ljava/lang/Boolean;Ljava/lang/String;Lcom/github/kotlintelegrambot/entities/payments/provider/Credentials;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/github/kotlintelegrambot/entities/payments/provider/CustomQuery;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getBotAccount ()Ljava/lang/String;
-	public final fun getBotId ()I
-	public final fun getBotOwnerId ()I
+	public final fun getBotId ()J
+	public final fun getBotOwnerId ()J
 	public final fun getBotUsername ()Ljava/lang/String;
 	public final fun getCallback ()Ljava/lang/String;
 	public final fun getChargeId ()Ljava/lang/String;
 	public final fun getCredentials ()Lcom/github/kotlintelegrambot/entities/payments/provider/Credentials;
 	public final fun getCurrency ()Ljava/lang/String;
+	public final fun getCustomerId ()J
 	public final fun getCustomerInfo ()Lcom/github/kotlintelegrambot/entities/payments/provider/CustomerInfo;
 	public final fun getData ()Ljava/lang/String;
 	public final fun getId ()Ljava/lang/String;

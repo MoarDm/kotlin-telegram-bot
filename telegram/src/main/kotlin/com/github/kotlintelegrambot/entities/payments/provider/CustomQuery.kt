@@ -6,10 +6,11 @@ import java.math.BigInteger
 data class CustomQuery(
     val id: String,
     val method: String,
-    @SerializedName("bot_id") val botId: Int,
+    @SerializedName("bot_id") val botId: Long,
     @SerializedName("bot_account") val botAccount: String,
     @SerializedName("bot_username") val botUsername: String,
-    @SerializedName("bot_owner_id") val botOwnerId: Int,
+    @SerializedName("bot_owner_id") val botOwnerId: Long,
+    @SerializedName("customer_id") val customerId: Long,
     @SerializedName("charge_id") val chargeId: String?,
     @SerializedName("total_amount") val totalAmount: BigInteger?,
     @SerializedName("customer_info") val customerInfo: CustomerInfo?,
