@@ -19,7 +19,7 @@ data class CustomQuery(
     val credentials: Credentials?,
     val payload: String?,
     val callback: String?,
-    val data: String?
+    val data: Map<String, Any>?
 )
 
 data class Credentials(

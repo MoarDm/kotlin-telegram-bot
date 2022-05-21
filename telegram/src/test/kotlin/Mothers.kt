@@ -492,7 +492,7 @@ fun anyCustomQuery(
     chargeId: String? = null,
     payload: String? = null,
     callback: String? = null,
-    data: String? = null
+    data: Map<String, Any>? = null
 ): CustomQuery = CustomQuery(
     id = id,
     currency = currency,
