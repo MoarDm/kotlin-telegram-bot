@@ -25,10 +25,15 @@ data class CustomQuery(
 data class Credentials(
     val type: String,
     val token: String? = null,
-    val savedCredentials: Credentials? = null
+    val saved: SavedCredentials? = null,
 )
 
 data class CustomerInfo(
     val phone: String,
     val email: String
+)
+
+data class SavedCredentials(
+    val id: String,
+    val title: String,
 )
