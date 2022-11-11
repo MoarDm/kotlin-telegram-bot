@@ -676,6 +676,8 @@ internal class ApiClient(
         address: String,
         foursquareId: String?,
         foursquareType: String?,
+        googlePlaceId: String?,
+        googlePlaceType: String?,
         disableNotification: Boolean?,
         replyToMessageId: Long?,
         allowSendingWithoutReply: Boolean?,
@@ -690,6 +692,8 @@ internal class ApiClient(
             address,
             foursquareId,
             foursquareType,
+            googlePlaceId,
+            googlePlaceType,
             disableNotification,
             replyToMessageId,
             allowSendingWithoutReply,
@@ -756,8 +760,8 @@ internal class ApiClient(
         replyMarkup,
     ).runApiOperation()
 
-    fun sendChatAction(chatId: ChatId, action: ChatAction): Call<Response<Boolean>> {
-        return service.sendChatAction(chatId, action)
+    fun sendChatAction(chatId: ChatId, action: ChatAction): TelegramBotResult<Boolean> {
+        return service.sendChatAction(chatId, action).runApiOperation()
     }
 
     fun getUserProfilePhotos(
@@ -870,9 +874,12 @@ internal class ApiClient(
         chatId: ChatId,
         messageId: Long,
         disableNotification: Boolean?
-    ): Call<Response<Boolean>> {
-
-        return service.pinChatMessage(chatId, messageId, disableNotification)
+    ): TelegramBotResult<Boolean> {
+        return service.pinChatMessage(
+            chatId,
+            messageId,
+            disableNotification,
+        ).runApiOperation()
     }
 
     fun unpinChatMessage(
@@ -889,9 +896,8 @@ internal class ApiClient(
         chatId
     ).runApiOperation()
 
-    fun leaveChat(chatId: ChatId): Call<Response<Boolean>> {
-
-        return service.leaveChat(chatId)
+    fun leaveChat(chatId: ChatId): TelegramBotResult<Boolean> {
+        return service.leaveChat(chatId).runApiOperation()
     }
 
     fun getChat(chatId: ChatId): TelegramBotResult<Chat> = service.getChat(chatId).runApiOperation()
@@ -941,6 +947,11 @@ internal class ApiClient(
     fun logOut(): Call<Response<Boolean>> {
 
         return service.logOut()
+    }
+
+    fun close(): Call<Response<Boolean>> {
+
+        return service.close()
     }
 
     /**
